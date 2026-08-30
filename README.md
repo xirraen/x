@@ -37,35 +37,6 @@
   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝
   </pre>
 </div>
-
----
-
-<div align="center" style="margin-bottom:18px;">
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Divider"/>
-  <br>
-  <strong style="color:#FFD700;font-size:1.07em;">🎯 Personal Mission</strong>
-  <br>
-  <em style="color:#dddddd">
-    "To explore, test, and build the infrastructure of Web3 — one node, one script, one community at a time.<br>
-    I believe in the power of decentralized systems to reshape the digital economy, and I'm committed to being an active participant in that transformation."
-  </em>
-</div>
-
----
-
-## 💡 About Me
-
-I'm a passionate **Web3 developer** and **full-stack engineer** dedicated to building decentralized applications and exploring blockchain technologies. My focus is on creating robust infrastructure for the next generation of the internet.
-
-## 🚀 What I Do
-
-- **Web3 Development**: Smart contracts, DApps, and blockchain infrastructure
-- **Full Stack Development**: Building end-to-end solutions with modern tech stacks
-- **Node Infrastructure**: Setting up and maintaining blockchain nodes
-- **Community Building**: Contributing to Web3 communities and educational initiatives
-
-## 🛠️ Tech Stack
-
 <div align="center">
 
 ### Languages & Frameworks
@@ -91,43 +62,18 @@ I'm a passionate **Web3 developer** and **full-stack engineer** dedicated to bui
 
 </div>
 
-## 📦 Key Projects
-
-### [XGUILD](https://github.com/xirraen/XGUILD)
-A Web3 guild infrastructure project exploring decentralized community management and governance.
-
-## 📊 GitHub Statistics
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=xirraen&show_icons=true&theme=dark&title_color=FFD700&text_color=ffffff&bg_color=1a1a1a)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=xirraen&layout=compact&theme=dark&title_color=FFD700&text_color=ffffff&bg_color=1a1a1a)
-
-</div>
-
-## 🎓 Learning & Growth
-
-- 📚 Continuously exploring new blockchain technologies and protocols
-- 🏗️ Building practical projects to deepen Web3 expertise
-- 🤝 Contributing to open-source projects
-- 💬 Engaging with the Web3 community
-
-## 🔗 Let's Connect
-
-Feel free to reach out if you'd like to:
-- Collaborate on Web3 projects
-- Discuss blockchain technology
-- Share ideas and learn together
-- Build something amazing
-
-<div align="center">
-
-**[Telegram](https://t.me/xirraen)** • **[Twitter](https://twitter.com/xirraen)** • **[Email](mailto:xirraen@gmail.com)**
-
-</div>
-
 ---
+
+<div align="center" style="margin-bottom:18px;">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Divider"/>
+  <br>
+  <strong style="color:#FFD700;font-size:1.07em;">🎯 Personal Mission</strong>
+  <br>
+  <em style="color:#dddddd">
+    "To explore, test, and build the infrastructure of Web3 — one node, one script, one community at a time.<br>
+    I believe in the power of decentralized systems to reshape the digital economy, and I'm committed to being an active participant in that transformation."
+  </em>
+</div>
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Divider"/>
