@@ -1,11 +1,3 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700&height=170&section=header&text=xirraen&fontSize=54&fontColor=181717&animation=fadeIn&fontAlignY=38" alt="Header"/>
-</div>
-
-<div align="center" style="margin-bottom: 14px;">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1200&color=FFD700&center=true&vCenter=true&width=600&lines=%F0%9F%94%90+Web3+Explorer;%F0%9F%92%BB+Full+Stack+Developer;%F0%9F%8C%90+Building+Decentralized+Future" alt="Typing Animation"/>
-</div>
-
 <div align="center" style="margin-bottom: 10px;">
   <img src="https://i.imgur.com/8MupZHY.gif" width="320" alt="Coding Animation"/>
 </div>
