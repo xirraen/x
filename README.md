@@ -1,39 +1,57 @@
-# xirraen
+<p align="center">
+  <img src="docs/assets/header.svg" alt="xirraen — independent developer" width="100%">
+</p>
 
-Independent development workspace for software experiments, Web3 research, and modular product engineering.
+<p align="center">
+  <a href="https://twitter.com/xirraen">X</a> ·
+  <a href="https://t.me/xirraen">Telegram</a>
+</p>
 
-## Repository map
-- `projects/` — product applications and project-specific documentation.
-- `packages/` — shared packages only when multiple projects need them.
-- `docs/` — repository-wide architecture, engineering, security, and governance.
-- `scripts/` — repeatable maintenance tasks.
-- `.github/workflows/` — automated quality and security checks.
+## About
 
-## Projects
+I'm **xirraen**, an independent developer. This repository is my personal development workspace: where I prototype ideas, run research, and shape them into small, well-scoped products.
 
-### Dropchoice
-Dropchoice is an evidence-first Web3 opportunity intelligence workspace for discovering signals, evaluating uncertainty, recording evidence, discussing research, tracking progress, and comparing route trade-offs without executing transactions.
+## Focus areas
 
-- [Project overview](projects/dropchoice/README.md)
-- [Product specification](projects/dropchoice/docs/PRODUCT_SPEC.md)
-- [Project roadmap](projects/dropchoice/ROADMAP.md)
+- Software experiments and rapid prototyping
+- Web3 research
+- Modular product engineering
 
-Current implementation is a local prototype. Demo data is not live research; evaluations are editorial assessments rather than financial forecasts; no wallet connection, signature, or transaction execution is provided.
+## How I work
 
-### XXX
-XXX is a minimal project scaffold reserved for a future product definition.
-
-- [Project overview](projects/xxx/README.md)
-
-It currently contains only a small Node.js module and test. Product scope, APIs, persistence, authentication, and deployment have not been defined.
-
-## Engineering principles
 1. Evidence over unsupported claims.
 2. Safe defaults and no secrets in client code.
 3. Small, reviewable changes with automated checks.
 4. Explicit product boundaries: a UI is not proof of production capability.
-5. Add shared infrastructure only when real project needs justify it.
+5. Shared infrastructure only when real needs justify it.
 
-See [ARCHITECTURE.md](ARCHITECTURE.md), [ROADMAP.md](ROADMAP.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [SECURITY.md](SECURITY.md).
+## Workspace layout
 
-Maintained by [@xirraen](https://github.com/xirraen).
+| Path | Purpose |
+| --- | --- |
+| `projects/` | Applications and project-specific docs |
+| `packages/` | Shared packages, only when reused |
+| `docs/` | Architecture, engineering, security, and governance |
+| `scripts/` | Repeatable maintenance tasks |
+| `.github/workflows/` | Automated quality and security checks |
+
+## Projects
+
+- [Dropchoice](projects/dropchoice/README.md) — evidence-first Web3 opportunity intelligence prototype. It uses demo data and does not connect wallets, sign, or execute transactions.
+- [XXX](projects/xxx/README.md) — minimal scaffold reserved for a future product definition.
+
+## Docs
+
+[Architecture](ARCHITECTURE.md) · [Roadmap](ROADMAP.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Governance](GOVERNANCE.md) · [Security](SECURITY.md) · [Support](SUPPORT.md)
+
+## Connect
+
+Find me on [X](https://twitter.com/xirraen) or [Telegram](https://t.me/xirraen).
+
+## Contributing and security
+
+Contributions are welcome; please read [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md). Report vulnerabilities via [SECURITY.md](SECURITY.md), not public issues.
+
+## License
+
+[MIT](LICENSE) © xirraen
