@@ -4,54 +4,68 @@
 
 <p align="center">
   <a href="https://twitter.com/xirraen">X</a> ·
-  <a href="https://t.me/xirraen">Telegram</a>
+  <a href="https://t.me/xirraen">Telegram</a> ·
+  <a href="https://github.com/xirraen">GitHub</a>
 </p>
 
-## About
+## Profile
 
-I'm **xirraen**, an independent developer. This repository is my personal development workspace: where I prototype ideas, run research, and shape them into small, well-scoped products.
+I'm **xirraen**, an independent developer focused on software engineering, technical research, and the development of practical, well-scoped digital products.
 
-## Focus areas
+This repository is my development workspace for exploring ideas, validating approaches, documenting technical decisions, and refining engineering practices. My approach is iterative: research first, define clear constraints, build deliberately, and verify results.
 
-- Software experiments and rapid prototyping
-- Web3 research
-- Modular product engineering
+## Areas of focus
 
-## How I work
+- **Software engineering** — maintainable architecture, clear interfaces, and small, reviewable changes.
+- **Technical research** — source evaluation, investigation, and evidence-based analysis.
+- **Product development** — translating early ideas into scoped prototypes and testable implementations.
+- **Engineering systems** — automation, quality checks, security practices, and reusable foundations.
 
-1. Evidence over unsupported claims.
-2. Safe defaults and no secrets in client code.
-3. Small, reviewable changes with automated checks.
-4. Explicit product boundaries: a UI is not proof of production capability.
-5. Shared infrastructure only when real needs justify it.
+## Engineering principles
 
-## Workspace layout
+1. **Evidence over assumptions.** Distinguish verified facts from hypotheses and estimates.
+2. **Security by default.** Avoid exposing secrets and keep permissions and system boundaries explicit.
+3. **Clarity over complexity.** Prefer understandable solutions; introduce abstractions when they provide measurable value.
+4. **Verification throughout development.** Use tests, static checks, and repeatable workflows where appropriate.
+5. **Transparent limitations.** Distinguish prototypes and demonstrations from production-ready capabilities.
+6. **Incremental improvement.** Keep changes focused, reviewable, and documented.
 
-| Path | Purpose |
+## Development workflow
+
+1. Research the problem and evaluate available evidence.
+2. Define scope, assumptions, constraints, and acceptance criteria.
+3. Implement the smallest useful solution.
+4. Run relevant tests and quality checks.
+5. Document decisions, limitations, and follow-up work.
+
+## Repository structure
+
+| Directory | Purpose |
 | --- | --- |
-| `projects/` | Applications and project-specific docs |
-| `packages/` | Shared packages, only when reused |
-| `docs/` | Architecture, engineering, security, and governance |
-| `scripts/` | Repeatable maintenance tasks |
+| `projects/` | Isolated development workspaces |
+| `packages/` | Shared components when reuse is justified |
+| `docs/` | Architecture, engineering, security, and governance documentation |
+| `scripts/` | Repeatable development and maintenance tasks |
 | `.github/workflows/` | Automated quality and security checks |
 
-## Projects
+## Documentation
 
-- [Dropchoice](projects/dropchoice/README.md) — evidence-first Web3 opportunity intelligence prototype. It uses demo data and does not connect wallets, sign, or execute transactions.
-- [XXX](projects/xxx/README.md) — minimal scaffold reserved for a future product definition.
+- [Architecture](ARCHITECTURE.md)
+- [Roadmap](ROADMAP.md)
+- [Changelog](CHANGELOG.md)
+- [Contributing](CONTRIBUTING.md)
+- [Governance](GOVERNANCE.md)
+- [Security](SECURITY.md)
+- [Support](SUPPORT.md)
 
-## Docs
+## Contact
 
-[Architecture](ARCHITECTURE.md) · [Roadmap](ROADMAP.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Governance](GOVERNANCE.md) · [Security](SECURITY.md) · [Support](SUPPORT.md)
+For updates and discussion, connect via [X](https://twitter.com/xirraen) or [Telegram](https://t.me/xirraen). Source code and development activity are available on [GitHub](https://github.com/xirraen).
 
-## Connect
+## Contributions and security
 
-Find me on [X](https://twitter.com/xirraen) or [Telegram](https://t.me/xirraen).
-
-## Contributing and security
-
-Contributions are welcome; please read [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md). Report vulnerabilities via [SECURITY.md](SECURITY.md), not public issues.
+Contributions should follow the repository's [contribution guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md). For responsible vulnerability reporting, follow [SECURITY.md](SECURITY.md) rather than opening a public issue.
 
 ## License
 
-[MIT](LICENSE) © xirraen
+Unless otherwise noted, the repository is distributed under the [MIT License](LICENSE).
