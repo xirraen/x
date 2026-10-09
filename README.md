@@ -1,76 +1,32 @@
-<div align="center" style="margin-bottom: 10px;">
-  <img src="https://i.imgur.com/8MupZHY.gif" width="320" alt="Coding Animation"/>
-</div>
+# xirraen
 
-<div align="center" style="margin-bottom:16px;">
-  <a href="https://t.me/xirraen">
-    <img src="https://img.shields.io/badge/Telegram-@xirraen-26A5E4?style=for-the-badge&logo=telegram&logoColor=white&labelColor=1a1a1a" alt="Telegram"/>
-  </a>
-  <a href="https://twitter.com/xirraen">
-    <img src="https://img.shields.io/badge/Twitter-@xirraen-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&labelColor=1a1a1a" alt="Twitter"/>
-  </a>
-  <a href="mailto:xirraen@gmail.com">
-    <img src="https://img.shields.io/badge/Email-xirraen@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1a1a1a" alt="Email"/>
-  </a>
-  <a href="https://github.com/xirraen">
-    <img src="https://img.shields.io/badge/GitHub-@xirraen-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a1a" alt="GitHub"/>
-  </a>
-</div>
+Independent development workspace for software experiments, Web3 research, and modular product engineering.
 
----
+## Repository map
+- `projects/` — product applications and project-specific documentation.
+- `packages/` — shared packages only when multiple projects need them.
+- `docs/` — repository-wide architecture, engineering, security, and governance.
+- `scripts/` — repeatable maintenance tasks.
+- `.github/workflows/` — automated quality and security checks.
 
-<div align="center">
-  <pre style="font-family: 'Fira Code', 'Consolas', monospace; color: #FFD700; font-weight: bold; font-size: 1.08em;">
-  ██╗  ██╗██╗██████╗ ██████╗  █████╗ ███████╗███╗   ██╗
-  ╚██╗██╔╝██║██╔══██╗██╔══██╗██╔══██╗██╔════╝████╗  ██║
-   ╚███╔╝ ██║██████╔╝██████╔╝███████║█████╗  ██╔██╗ ██║
-   ██╔██╗ ██║██╔══██╗██╔══██╗██╔══██║██╔══╝  ██║╚██╗██║
-  ██╔╝ ██╗██║██║  ██║██║  ██║██║  ██║███████╗██║ ╚████║
-  ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝
-  </pre>
-</div>
-<div align="center">
+## Projects
 
-### Languages & Frameworks
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Solidity](https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+### Dropchoice
+Dropchoice is an evidence-first Web3 opportunity intelligence workspace for discovering signals, evaluating uncertainty, recording evidence, discussing research, tracking progress, and comparing route trade-offs without executing transactions.
 
-### Blockchain & Web3
-![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white)
-![Web3.js](https://img.shields.io/badge/Web3.js-F16822?style=for-the-badge&logo=web3.js&logoColor=white)
-![Hardhat](https://img.shields.io/badge/Hardhat-FFF04B?style=for-the-badge&logo=hardhat&logoColor=black)
+- [Project overview](projects/dropchoice/README.md)
+- [Product specification](projects/dropchoice/docs/PRODUCT_SPEC.md)
+- [Project roadmap](projects/dropchoice/ROADMAP.md)
 
-### Backend & Databases
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+Current implementation is a local prototype. Demo data is not live research; evaluations are editorial assessments rather than financial forecasts; no wallet connection, signature, or transaction execution is provided.
 
-### Frontend
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+## Engineering principles
+1. Evidence over unsupported claims.
+2. Safe defaults and no secrets in client code.
+3. Small, reviewable changes with automated checks.
+4. Explicit product boundaries: a UI is not proof of production capability.
+5. Add shared infrastructure only when real project needs justify it.
 
-</div>
+See [ARCHITECTURE.md](ARCHITECTURE.md), [ROADMAP.md](ROADMAP.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [SECURITY.md](SECURITY.md).
 
----
-
-<div align="center" style="margin-bottom:18px;">
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Divider"/>
-  <br>
-  <strong style="color:#FFD700;font-size:1.07em;">🎯 Personal Mission</strong>
-  <br>
-  <em style="color:#dddddd">
-    "To explore, test, and build the infrastructure of Web3 — one node, one script, one community at a time.<br>
-    I believe in the power of decentralized systems to reshape the digital economy, and I'm committed to being an active participant in that transformation."
-  </em>
-</div>
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Divider"/>
-  <br><br>
-  <em style="color:#FFD700;font-size:0.9em;">Made with ❤️ by xirraen</em>
-  <br>
-  <strong style="color:#dddddd;font-size:0.85em;">Exploring the future of Web3, one block at a time</strong>
-</div>
+Maintained by [@xirraen](https://github.com/xirraen).
