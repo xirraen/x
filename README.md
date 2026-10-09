@@ -1,78 +1,32 @@
-<!--
-  GitHub profile README for xirraen.
-  Keep this page focused on the developer profile; project-specific documentation belongs in each project's repository.
--->
+# xirraen
 
-<div align="center">
+Independent development workspace for software experiments, Web3 research, and modular product engineering.
 
-# XIRRAEN
+## Repository map
+- `projects/` — product applications and project-specific documentation.
+- `packages/` — shared packages only when multiple projects need them.
+- `docs/` — repository-wide architecture, engineering, security, and governance.
+- `scripts/` — repeatable maintenance tasks.
+- `.github/workflows/` — automated quality and security checks.
 
-**Web3 · Blockchain Infrastructure · Software Development**
+## Projects
 
-I explore, test, and build across decentralized systems — from blockchain tooling and smart contracts to backend services and web applications.
+### Dropchoice
+Dropchoice is an evidence-first Web3 opportunity intelligence workspace for discovering signals, evaluating uncertainty, recording evidence, discussing research, tracking progress, and comparing route trade-offs without executing transactions.
 
-[GitHub](https://github.com/xirraen) · [Twitter / X](https://twitter.com/xirraen) · [Telegram](https://t.me/xirraen) · [Email](mailto:xirraen@gmail.com)
+- [Project overview](projects/dropchoice/README.md)
+- [Product specification](projects/dropchoice/docs/PRODUCT_SPEC.md)
+- [Project roadmap](projects/dropchoice/ROADMAP.md)
 
-</div>
+Current implementation is a local prototype. Demo data is not live research; evaluations are editorial assessments rather than financial forecasts; no wallet connection, signature, or transaction execution is provided.
 
----
+## Engineering principles
+1. Evidence over unsupported claims.
+2. Safe defaults and no secrets in client code.
+3. Small, reviewable changes with automated checks.
+4. Explicit product boundaries: a UI is not proof of production capability.
+5. Add shared infrastructure only when real project needs justify it.
 
-## Areas of Interest
+See [ARCHITECTURE.md](ARCHITECTURE.md), [ROADMAP.md](ROADMAP.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [SECURITY.md](SECURITY.md).
 
-- **Web3 & blockchain:** Ethereum, smart contracts, and decentralized infrastructure
-- **Development:** JavaScript, TypeScript, Python, and Solidity
-- **Backend & data:** Node.js, PostgreSQL, and MongoDB
-- **Web applications:** React, Next.js, and Tailwind CSS
-- **Tooling:** Web3.js and Hardhat
-
-## Technology Stack
-
-<div align="center">
-
-### Languages
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-
-### Blockchain
-![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=flat-square&logo=ethereum&logoColor=white)
-![Web3.js](https://img.shields.io/badge/Web3.js-F16822?style=flat-square&logo=web3.js&logoColor=white)
-![Hardhat](https://img.shields.io/badge/Hardhat-FFF04B?style=flat-square&logo=hardhat&logoColor=black)
-
-### Backend & Databases
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-
-### Frontend
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-
-</div>
-
----
-
-## Working Principles
-
-- **Learn by building:** validate ideas through practical experiments.
-- **Prefer clarity:** keep documentation and project structure understandable.
-- **Build deliberately:** prioritize useful, maintainable systems over unnecessary complexity.
-- **Stay curious:** continue exploring decentralized technology and its infrastructure.
-
-## Connect
-
-For collaboration, technical discussion, or project inquiries:
-
-- Telegram: [@xirraen](https://t.me/xirraen)
-- Twitter / X: [@xirraen](https://twitter.com/xirraen)
-- Email: [xirraen@gmail.com](mailto:xirraen@gmail.com)
-
----
-
-<div align="center">
-
-*Exploring the future of Web3, one block at a time.*
-
-</div>
+Maintained by [@xirraen](https://github.com/xirraen).

@@ -1,16 +1,11 @@
 # Contributing
 
-Thank you for your interest in contributing!
+1. Review or open an issue for substantial work.
+2. Create a focused branch and keep each PR scoped.
+3. Add tests and documentation with behavior changes.
+4. Run checks and report results.
+5. Describe limitations, security risks, and migration impact.
 
-## How to Contribute
+Dropchoice checks (from `projects/dropchoice/`): `npm install`, `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
 
-1. Fork the repository.
-2. Create a feature branch.
-3. Make your changes.
-4. Commit your changes.
-5. Push to GitHub.
-6. Open a Pull Request.
-
-## Questions?
-
-Reach out via Telegram: [@xiraen](https://t.me/xiraen)
+Use TypeScript, separate domain rules from UI, validate untrusted input, and avoid unnecessary dependencies. Never commit credentials, seed phrases, private keys, or production data. Do not claim demo-only features are live or production-ready.
