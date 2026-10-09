@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">xirraen — independent developer</title>
+  <desc id="desc">Dark technical banner with orange code motifs and connected blockchain nodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111111"/><stop offset="1" stop-color="#20170f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#f97316" stroke-opacity=".12" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="300" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="300" rx="18" fill="url(#grid)"/>
+  <g fill="#fb923c" opacity=".48" font-family="monospace" font-size="15">
+    <text x="42" y="48">0xdead · tx.valid · SHA256</text>
+    <text x="800" y="44">block++ · prev: 0x3f9a</text>
+    <text x="55" y="250">chain[] · mine() · sig==</text>
+    <text x="875" y="258">10110 · 0x840009</text>
+  </g>
+  <g stroke="#f97316" stroke-width="2" fill="none" opacity=".7">
+    <path d="M80 104H230L270 144H360M840 144H930L970 104H1120"/>
+    <path d="M80 192H190L220 162M980 162L1010 192H1120"/>
+  </g>
+  <g fill="#21150d" stroke="url(#accent)" stroke-width="2">
+    <rect x="52" y="88" width="42" height="32" rx="6"/><rect x="250" y="128" width="42" height="32" rx="6"/>
+    <rect x="1100" y="88" width="42" height="32" rx="6"/><rect x="908" y="128" width="42" height="32" rx="6"/>
+    <rect x="170" y="176" width="42" height="32" rx="6"/><rect x="988" y="176" width="42" height="32" rx="6"/>
+  </g>
+  <g fill="#fbbf24" font-family="monospace" font-size="13" font-weight="700" text-anchor="middle">
+    <text x="73" y="109">B</text><text x="271" y="149">B</text><text x="1121" y="109">B</text>
+    <text x="929" y="149">B</text><text x="191" y="197">B</text><text x="1009" y="197">B</text>
+  </g>
+  <text x="600" y="130" text-anchor="middle" fill="url(#accent)" font-family="monospace, sans-serif" font-size="72" font-weight="800" letter-spacing="2">xirraen</text>
+  <path d="M355 150H845" stroke="url(#accent)" stroke-width="2" opacity=".9"/>
+  <text x="600" y="190" text-anchor="middle" fill="#fed7aa" font-family="monospace, sans-serif" font-size="22">Independent developer · Software · Web3 research</text>
+  <text x="600" y="222" text-anchor="middle" fill="#fdba74" font-family="monospace, sans-serif" font-size="18">Modular product engineering</text>
+  <rect x="1" y="1" width="1198" height="298" rx="18" fill="none" stroke="#f97316" stroke-opacity=".45"/>
+</svg>
