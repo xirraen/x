@@ -9,9 +9,13 @@ permissions:
 jobs:
   npm-audit:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [dropchoice, xxx]
     defaults:
       run:
-        working-directory: projects/dropchoice
+        working-directory: projects/${{ matrix.project }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

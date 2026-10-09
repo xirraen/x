@@ -20,6 +20,13 @@ Dropchoice is an evidence-first Web3 opportunity intelligence workspace for disc
 
 Current implementation is a local prototype. Demo data is not live research; evaluations are editorial assessments rather than financial forecasts; no wallet connection, signature, or transaction execution is provided.
 
+### XXX
+XXX is a minimal project scaffold reserved for a future product definition.
+
+- [Project overview](projects/xxx/README.md)
+
+It currently contains only a small Node.js module and test. Product scope, APIs, persistence, authentication, and deployment have not been defined.
+
 ## Engineering principles
 1. Evidence over unsupported claims.
 2. Safe defaults and no secrets in client code.
