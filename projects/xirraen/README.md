@@ -23,11 +23,13 @@ npm run build
 - GitHub: https://github.com/xirraen
 - Telegram: https://t.me/xirraen
 
-## Wallet address and data display
+## Live on-chain data
 
-The page uses the address supplied for the current markup: `0xCcA079160b4D308C5480BB40F066De58761a2e1D`. The complete checksum-case address is copied when the compact on-chain row is tapped or clicked; the visible abbreviation is uppercased for visual alignment. The `$0.000` figure is a layout placeholder and has not been verified for this new address. Transaction count, wallet age, gas usage, and protocol count remain unavailable. Allocation and 24-hour display were removed from the card.
+The on-chain card reads public EVM balance aggregates and transaction history from Routescan for Ethereum, Optimism, Arbitrum, Base, Gnosis, Polygon, and Avalanche C-Chain. The page requests a refresh about every 60 seconds; its server route keeps only a short-lived in-memory response cache and sends `Cache-Control: no-store` to clients. The page and public JSON endpoint do not expose individual token names, quantities, or holdings lists.
 
-No live portfolio feed, private key, seed phrase, signer, or transaction endpoint is used in this markup preview.
+USD totals include only assets with a usable provider value or a conservative fallback: DexScreener fallback pricing is included only when at least two active, liquid pools agree within 20%. Assets with conflicting or unavailable prices are excluded from the aggregate, and the UI exposes only a generic partial-value indicator through accessibility metadata—not the asset identity or quantity. Gas shows the sum of indexed gas units, and protocol count is a proxy based on distinct decoded contract destinations.
+
+All requests are read-only. No private key, seed phrase, signer, transaction submission, or persistent balance storage is used. The complete checksum-case wallet address is copied when the compact address row is tapped or clicked; the visible abbreviation is uppercased for visual alignment.
 
 ## Hosting
 

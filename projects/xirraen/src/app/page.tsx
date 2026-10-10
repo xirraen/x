@@ -1,17 +1,6 @@
 import Image from "next/image";
-import WalletAddressButton from "./components/wallet-address-button";
-
-const walletAddress = "0xCcA079160b4D308C5480BB40F066De58761a2e1D";
-
-const networks = [
-  { name: "Ethereum", asset: "ethereum.svg", tone: "ethereum" },
-  { name: "Optimism", asset: "optimism.svg", tone: "optimism" },
-  { name: "Arbitrum", asset: "arbitrum-one.svg", tone: "arbitrum" },
-  { name: "Base", asset: "base.svg", tone: "base" },
-  { name: "Gnosis", asset: "gnosis.svg", tone: "gnosis" },
-  { name: "Polygon", asset: "polygon.svg", tone: "polygon" },
-  { name: "Avalanche C-Chain", asset: "avalanche.svg", tone: "avalanche" },
-];
+import { ActivityCard, OnchainCard, OnchainDataProvider } from "./components/onchain-live";
+import { walletAddress } from "@/lib/wallet";
 
 type SocialApp = { name: string; asset: string; color: string; href: string; native?: boolean; darkTile?: boolean };
 
@@ -49,6 +38,7 @@ export default function Home() {
       <div className="ambient ambient-two" aria-hidden="true" />
 
       <div className="page-content">
+        <OnchainDataProvider>
         <div className="bento-grid">
           <section className="profile-card" aria-labelledby="profile-name">
             <div className="profile-cover" aria-hidden="true">
@@ -74,34 +64,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="onchain-card" aria-labelledby="onchain-title">
-            <div className="onchain-head">
-              <WalletAddressButton address={walletAddress} />
-            </div>
-            <h2 className="sr-only" id="onchain-title">Ringkasan on-chain wallet</h2>
-
-            <div className="balance-row">
-              <strong className="balance-value">$0.000</strong>
-              <span className="balance-token" role="img" aria-label="USDT Tether" title="USDT Tether">
-                <Image src="/chain-icons/usdt-tether.png" alt="" width={18} height={18} />
-              </span>
-            </div>
-
-            <dl className="onchain-metrics">
-              <div><dt>TRANSAKSI</dt><dd>—</dd></div>
-              <div><dt>UMUR</dt><dd>—</dd></div>
-              <div><dt>GAS</dt><dd>—</dd></div>
-              <div><dt>PROTOKOL</dt><dd>—</dd></div>
-            </dl>
-
-            <div className="chain-icons" aria-label="Tujuh jaringan yang diperiksa">
-              {networks.map((network) => (
-                <span className={`chain-icon chain-${network.tone}`} role="img" title={network.name} aria-label={network.name} key={network.name}>
-                  <Image src={`/chain-icons/${network.asset}`} alt="" width={18} height={18} />
-                </span>
-              ))}
-            </div>
-          </section>
+          <OnchainCard address={walletAddress} />
 
           <div className="top-links-stack">
             <nav className="links-folder" aria-label="Social media">
@@ -142,16 +105,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="empty-tile activity-tile" aria-labelledby="activity-heading">
-            <div className="tile-heading">
-              <div><span className="tile-kicker">03 / ACTIVITY</span><h2 id="activity-heading">Aktivitas terbaru</h2></div>
-              <span className="live-pill"><i aria-hidden="true" /> OFFLINE</span>
-            </div>
-            <div className="activity-empty">
-              <span className="activity-line" aria-hidden="true" />
-              <p>Feed aktivitas belum terhubung. Tidak ada transaksi atau pembaruan yang dikarang.</p>
-            </div>
-          </section>
+          <ActivityCard />
 
           <section className="projects-section" aria-labelledby="projects-heading">
             <div className="projects-heading">
@@ -169,6 +123,7 @@ export default function Home() {
             </div>
           </section>
         </div>
+        </OnchainDataProvider>
 
         <footer className="footer">
           <span>© 2026 <strong>xirraen</strong></span>

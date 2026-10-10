@@ -94,6 +94,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .onchain-card {
   grid-column: span 2;
   grid-row: span 2;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 180px;
   display: flex;
   flex-direction: column;
@@ -101,6 +104,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
   border-radius: 18px;
   color: #0b1b4d;
 }
+.onchain-card > :not(.onchain-candle-watermark) { position: relative; z-index: 1; }
+.onchain-candle-watermark { position: absolute; z-index: 0; top: 56%; left: 50%; width: 82%; height: 58px; transform: translate(-50%,-50%); opacity: .25; pointer-events: none; mask-image: linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent); }
 .onchain-head { display: flex; justify-content: space-between; align-items: center; gap: 4px; }
 .wallet-address-button {
   display: grid;
@@ -133,6 +138,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .onchain-metrics dt { color: #1c2d58; font: 500 7px/1.2 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .035em; }
 .onchain-metrics dd { margin: 0; color: #66769f; font: 500 7px/1.2 "JetBrains Mono", ui-monospace, monospace; }
 .chain-icons { display: flex; justify-content: space-between; align-items: center; gap: 2px; margin-top: 4px; padding-top: 3px; }
+.balance-meta { display: flex; justify-content: space-between; align-items: center; gap: 4px; margin-top: 3px; color: #8390aa; font: 500 5.5px/1.2 "JetBrains Mono", ui-monospace, monospace; }
+.wallet-live-state { display: inline-flex; align-items: center; gap: 3px; letter-spacing: .08em; }
+.wallet-live-state i { width: 5px; height: 5px; border-radius: 50%; background: #aeb7c7; }
+.wallet-live-state.live i { background: #1a9a6b; box-shadow: 0 0 0 2px rgba(26,154,107,.12); }
+.wallet-live-state.sync i { background: #e2a22b; }
+.wallet-live-state.stale i, .wallet-live-state.offline i { background: #b0bacb; }
 
 .top-links-stack {
   grid-column: span 2;
@@ -176,6 +187,18 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .activity-empty { display: flex; align-items: center; gap: 10px; min-height: 88px; margin-top: 9px; padding: 11px; border: 1px dashed #c6d4f2; border-radius: 12px; background: #f8faff; }
 .activity-line { flex: 0 0 3px; height: 38px; border-radius: 99px; background: linear-gradient(#2b5cff,#bfd0ff); }
 .activity-empty p { max-width: 290px; margin: 0; color: #6d7da2; font-size: 9px; line-height: 1.5; }
+.live-pill.is-live { color: #16855f; }
+.live-pill.is-live i { background: #20a575; }
+.activity-list { display: grid; gap: 4px; margin-top: 8px; }
+.activity-item { display: grid; grid-template-columns: 23px minmax(0,1fr) max-content; align-items: center; gap: 7px; min-width: 0; padding: 4px 5px; border: 1px solid #edf1fa; border-radius: 9px; background: #fbfcff; }
+.activity-direction { display: grid; width: 22px; height: 22px; place-items: center; border-radius: 7px; color: #3159b7; background: #eaf0ff; font: 700 12px/1 "Space Grotesk", ui-sans-serif, sans-serif; }
+.activity-direction.out { color: #a05b49; background: #fff0ec; }
+.activity-direction.in { color: #16855f; background: #e9f8f1; }
+.activity-copy { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
+.activity-copy strong { overflow: hidden; color: #31436a; font: 600 8px/1.2 "Space Grotesk", ui-sans-serif, sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.activity-copy span { overflow: hidden; color: #8995ab; font: 500 6px/1.2 "JetBrains Mono", ui-monospace, monospace; text-overflow: ellipsis; white-space: nowrap; }
+.activity-date { color: #8c98ae; font: 500 6px/1.2 "JetBrains Mono", ui-monospace, monospace; white-space: nowrap; }
+.activity-footnote { margin: 3px 1px 0; color: #9aa4b5; font: 500 6px/1.35 "JetBrains Mono", ui-monospace, monospace; }
 
 .projects-section { grid-column: 1 / -1; padding-top: 2px; }
 .projects-heading { margin: 0 1px 9px; }
@@ -231,6 +254,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
   .wallet-address-value { max-width: 48px; font-size: 6px; }
   .copy-icon { width: 17px; height: 17px; }
   .onchain-metrics dt, .onchain-metrics dd { font-size: 6px; }
+  .balance-meta { font-size: 5px; }
+  .activity-item { grid-template-columns: 20px minmax(0,1fr) max-content; gap: 5px; padding: 4px; }
+  .activity-direction { width: 19px; height: 19px; }
+  .activity-copy strong { font-size: 7px; }
+  .activity-copy span, .activity-date, .activity-footnote { font-size: 5.5px; }
   .chain-icon, .balance-token { width: 17px; height: 17px; padding: 1px; }
   .social-tile { width: min(100%,26px); }
   .social-brand-icon { width: 16px; height: 16px; }
