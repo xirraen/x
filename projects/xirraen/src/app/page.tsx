@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GlobalChat } from "@/components/GlobalChat";
 import { ActivityCard, OnchainCard, OnchainDataProvider } from "./components/onchain-live";
 import { walletAddress } from "@/lib/wallet";
 
@@ -79,9 +80,11 @@ export default function Home() {
                 })}
               </div>
             </nav>
+          </div>
 
+          <div className="left-project-stack">
             <a className="project-card feature-dropchoice-card" href="https://dropchoice-web.vercel.app" target="_blank" rel="noreferrer" aria-label="Web3 Tracker: Dropchoice">
-              <Image className="dropchoice-logo" src="/dropchoice-logo.svg" alt="" width={30} height={30} />
+              <Image className="dropchoice-logo" src="/dropchoice-mark.jpg" alt="" width={30} height={30} />
               <span className="project-copy">
                 <span className="project-eyebrow">WEB3 TRACKER</span>
                 <strong>DROPCHOICE</strong>
@@ -92,7 +95,14 @@ export default function Home() {
             <div className="coming-soon-card" role="note" aria-label="Coming soon">
               <span>COMING SOON</span>
             </div>
+            <div className="coming-soon-card" role="note" aria-label="Coming soon project 2">
+              <span>COMING SOON</span>
+            </div>
           </div>
+
+          <section className="open-layout-panel" aria-label="Global Chat">
+            <GlobalChat />
+          </section>
 
           <section className="empty-tile ecosystem-tile" aria-labelledby="ecosystem-heading">
             <div className="tile-heading">
