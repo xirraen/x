@@ -1,12 +1,4 @@
-<p align="center">
-  <img src="docs/assets/header.svg" alt="xirraen — independent developer" width="100%">
-</p>
-
-<p align="center">
-  <a href="https://twitter.com/xirraen">X</a> ·
-  <a href="https://t.me/xirraen">Telegram</a> ·
-  <a href="https://github.com/xirraen">GitHub</a>
-</p>
+<p>
 
 ## Profile
 
