@@ -138,7 +138,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .onchain-metrics dt { color: #1c2d58; font: 500 7px/1.2 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .035em; }
 .onchain-metrics dd { margin: 0; color: #66769f; font: 500 7px/1.2 "JetBrains Mono", ui-monospace, monospace; }
 .chain-icons { display: flex; justify-content: space-between; align-items: center; gap: 2px; margin-top: 4px; padding-top: 3px; }
-.balance-meta { display: flex; justify-content: space-between; align-items: center; gap: 4px; margin-top: 3px; color: #8390aa; font: 500 5.5px/1.2 "JetBrains Mono", ui-monospace, monospace; }
+.balance-meta { display: flex; justify-content: flex-start; align-items: center; gap: 4px; margin-top: 3px; color: #8390aa; font: 500 5.5px/1.2 "JetBrains Mono", ui-monospace, monospace; }
 .wallet-live-state { display: inline-flex; align-items: center; gap: 3px; letter-spacing: .08em; }
 .wallet-live-state i { width: 5px; height: 5px; border-radius: 50%; background: #aeb7c7; }
 .wallet-live-state.live i { background: #1a9a6b; box-shadow: 0 0 0 2px rgba(26,154,107,.12); }
@@ -207,7 +207,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .project-card { display: grid; grid-template-columns: 31px minmax(0,1fr) 14px; align-items: center; gap: 8px; min-height: 68px; padding: 9px; border-radius: 13px; transition: transform .16s, box-shadow .16s, border-color .16s; }
 .project-card:hover { transform: translateY(-2px); border-color: #c2d5ff; box-shadow: 0 8px 18px rgba(11,27,77,.19); }
 .project-card.feature-dropchoice-card { width: 100%; height: 100%; min-height: 0; grid-template-columns: 28px minmax(0,1fr) 12px; gap: 6px; padding: 6px; border-color: #cbd9ff; border-radius: 14px; background: #fff; }
-.feature-dropchoice-card .project-copy strong { font-size: 8px; letter-spacing: -.025em; }
+.feature-dropchoice-card .project-copy strong { font-size: 11px; line-height: 1; letter-spacing: -.035em; white-space: nowrap; }
+.feature-dropchoice-card .project-eyebrow { font-size: 5.5px; line-height: 1; letter-spacing: .04em; }
 .dropchoice-logo { display: block; width: 26px; height: 26px; border-radius: 8px; }
 .coming-soon-card { display: grid; width: 100%; height: 100%; min-width: 0; min-height: 0; place-items: center; border: 1px solid #d6dae3; border-radius: 14px; color: #8991a1; background: #e7e9ee; box-shadow: 0 2px 8px rgba(11,27,77,.07); font: 600 7px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .12em; }
 .project-mark { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; color: #fff; background: linear-gradient(145deg,#418cf2,#1557c3); font: 700 9px/1 "Space Grotesk", ui-sans-serif, sans-serif; }

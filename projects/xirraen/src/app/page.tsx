@@ -80,11 +80,11 @@ export default function Home() {
               </div>
             </nav>
 
-            <a className="project-card feature-dropchoice-card" href="https://dropchoice-web.vercel.app" target="_blank" rel="noreferrer" aria-label="Web3 Tracker: Dropchoice Beta">
+            <a className="project-card feature-dropchoice-card" href="https://dropchoice-web.vercel.app" target="_blank" rel="noreferrer" aria-label="Web3 Tracker: Dropchoice">
               <Image className="dropchoice-logo" src="/dropchoice-logo.svg" alt="" width={30} height={30} />
               <span className="project-copy">
                 <span className="project-eyebrow">WEB3 TRACKER</span>
-                <strong>DROPCHOICE | BETA</strong>
+                <strong>DROPCHOICE</strong>
               </span>
               <span className="project-arrow" aria-hidden="true">↗</span>
             </a>

@@ -102,16 +102,6 @@ function formatQuantity(value: string): string {
   return new Intl.NumberFormat("en-US", { maximumSignificantDigits: 7 }).format(number);
 }
 
-function timeLabel(timestamp: string): string {
-  const parsed = Date.parse(timestamp);
-  if (!Number.isFinite(parsed)) return "—";
-  return new Intl.DateTimeFormat("id-ID", {
-    timeZone: "Asia/Jakarta",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(parsed);
-}
-
 function relativeTime(timestamp: string): string {
   const elapsed = Math.max(0, Date.now() - Date.parse(timestamp));
   if (!Number.isFinite(elapsed)) return "waktu tidak diketahui";
@@ -127,7 +117,6 @@ function relativeTime(timestamp: string): string {
 export function OnchainCard({ address }: Readonly<{ address: string }>) {
   const { data, loading, error } = useOnchainData();
   const status = error ? (data ? "STALE" : "OFFLINE") : data ? "LIVE" : loading ? "SYNC" : "OFFLINE";
-  const updatedAt = data ? timeLabel(data.updatedAt) : "—";
   const totalLabel = !data
     ? "—"
     : data.summary.totalUsd === 0 && data.summary.usdIsPartial
@@ -171,14 +160,13 @@ export function OnchainCard({ address }: Readonly<{ address: string }>) {
 
       <div className="balance-meta">
         <span className={`wallet-live-state ${status.toLowerCase()}`}><i aria-hidden="true" />{status}</span>
-        <time dateTime={data?.updatedAt}>{data ? `UPDATE ${updatedAt} WIB` : loading ? "MENGAMBIL DATA…" : "MENUNGGU FEED"}</time>
       </div>
 
       <dl className="onchain-metrics">
         <div><dt>TRANSAKSI</dt><dd>{data ? formatCompact(data.summary.transactionCount) : "—"}</dd></div>
         <div><dt>UMUR WALLET</dt><dd>{data?.summary.walletAgeDays === null || !data ? "—" : `${data.summary.walletAgeDays} hari`}</dd></div>
         <div><dt>GAS</dt><dd title={gasTitle}>{data ? `${formatCompact(data.summary.gasUsed)} unit` : "—"}</dd></div>
-        <div><dt>PROTOKOL*</dt><dd title="Jumlah tujuan kontrak unik dengan method yang terdekode pada riwayat yang dimuat.">{data?.summary.protocolCount === null || !data ? "—" : data.summary.protocolCount}</dd></div>
+        <div><dt>PROTOKOL</dt><dd title="Jumlah tujuan kontrak unik dengan method yang terdekode pada riwayat yang dimuat.">{data?.summary.protocolCount === null || !data ? "—" : data.summary.protocolCount}</dd></div>
       </dl>
 
       <div className="chain-icons" aria-label="Jaringan EVM yang diperiksa">
