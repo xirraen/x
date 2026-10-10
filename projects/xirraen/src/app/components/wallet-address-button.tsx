@@ -8,6 +8,7 @@ type WalletAddressButtonProps = {
 
 export default function WalletAddressButton({ address }: WalletAddressButtonProps) {
   const [copied, setCopied] = useState(false);
+  const shortAddress = `${address.slice(0, 6)}…${address.slice(-4)}`;
 
   async function copyAddress() {
     try {
@@ -33,21 +34,23 @@ export default function WalletAddressButton({ address }: WalletAddressButtonProp
   }
 
   return (
-    <button className="wallet-address-button" type="button" onClick={copyAddress} aria-label="Ketuk untuk menyalin alamat wallet">
-      <span className="wallet-address-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" className="wallet-svg">
-          <path d="M4.75 7.25A2.25 2.25 0 0 1 7 5h11.25A2.75 2.75 0 0 1 21 7.75v9.5A2.75 2.75 0 0 1 18.25 20H6.5A3.5 3.5 0 0 1 3 16.5v-9A2.25 2.25 0 0 1 5.25 5H7" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M16 13h5M4 8h14.25A2.75 2.75 0 0 1 21 10.75v4.5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-          <circle cx="16.2" cy="13" r="1" fill="currentColor" />
-        </svg>
+    <button
+      className={`wallet-address-button${copied ? " is-copied" : ""}`}
+      type="button"
+      onClick={copyAddress}
+      aria-label={copied ? "Alamat wallet tersalin" : `Ketuk untuk menyalin alamat wallet ${address}`}
+      title={copied ? "Tersalin" : "Ketuk untuk menyalin alamat wallet"}
+    >
+      <span className="wallet-address-label">ON-CHAIN</span>
+      <span className="wallet-address-value" title={address}>{shortAddress}</span>
+      <span className="copy-icon" aria-hidden="true">
+        {copied ? (
+          <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        ) : (
+          <svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" strokeWidth="2" /><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+        )}
       </span>
-      <span className="wallet-address-copy">
-        <span className="wallet-address-label">EVM WALLET · TAP TO COPY</span>
-        <span className="wallet-address-value">{address}</span>
-      </span>
-      <span className={`copy-indicator${copied ? " is-copied" : ""}`} aria-live="polite">
-        {copied ? "Tersalin" : "Salin"}
-      </span>
+      <span className="sr-only" aria-live="polite">{copied ? "Alamat wallet tersalin ke clipboard." : ""}</span>
     </button>
   );
 }
