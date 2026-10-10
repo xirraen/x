@@ -60,7 +60,7 @@ export default function App() {
     <div className="shell">
       <aside className={`sidebar ${mobileOpen ? "open" : ""}`}>
         <button className="brand" onClick={() => navigate("Overview")} aria-label="Open Dropchoice overview">
-          <span className="brand-mark">D</span>
+          <img className="brand-logo" src="/dropchoice-logo.jpg" alt="Dropchoice logo" />
           <span><strong>drop<span>choice</span></strong><small>WEB3 INTELLIGENCE</small></span>
         </button>
         <div className="nav-label">WORKSPACE</div>
