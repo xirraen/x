@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "xirraen — Riset, rekayasa, produk digital",
+  metadataBase: new URL("https://xirraen.vercel.app"),
+  title: "xirraen — exploring web3 ecosystems",
   description:
-    "Ruang personal xirraen: pengembangan perangkat lunak, riset teknis, dan produk digital yang praktis.",
+    "Profil Web3 xirraen: menjelajahi protokol on-chain, budaya aset digital, dan komunitas yang membentuk internet terbuka.",
   openGraph: {
-    title: "xirraen — Riset, rekayasa, produk digital",
+    title: "xirraen — exploring web3 ecosystems",
     description:
-      "Pengembang independen yang membangun produk digital praktis dengan riset cermat dan rekayasa yang bertanggung jawab.",
+      "Menjelajahi protokol on-chain, budaya aset digital, dan komunitas yang membentuk internet terbuka.",
     type: "website",
+    images: ["/xirraen-avatar.webp"],
   },
   icons: { icon: "/favicon.svg" },
 };
