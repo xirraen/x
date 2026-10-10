@@ -23,12 +23,16 @@ npm run build
 - GitHub: https://github.com/xirraen
 - Telegram: https://t.me/xirraen
 
-## Wallet snapshot
+## Wallet address and data display
 
-The page displays the public wallet address supplied by the owner. The complete address is copied when any part of the compact on-chain row is tapped or clicked. The balance snapshot showed no native-coin or token holdings on Ethereum, Optimism, Arbitrum, Base, Gnosis, Polygon, and Avalanche C-Chain as of 10 October 2026, 15:39 WIB. Allocation and 24-hour change remain unavailable because there are no detected holdings to chart. Transaction count, wallet age, gas usage, and protocol count are shown as unavailable because those activity metrics have not been indexed.
+The page uses the address supplied for the current markup: `0xCcA079160b4D308C5480BB40F066De58761a2e1D`. The complete checksum-case address is copied when the compact on-chain row is tapped or clicked; the visible abbreviation is uppercased for visual alignment. The `$0.000` figure is a layout placeholder and has not been verified for this new address. Transaction count, wallet age, gas usage, and protocol count remain unavailable. Allocation and 24-hour display were removed from the card.
 
-The snapshot was checked with public Blockscout explorer pages for six networks and the Routescan keyless read-only API for Avalanche C-Chain. It is a point-in-time check, not a continuous portfolio feed; other EVM networks are outside this snapshot. No private key, seed phrase, signer, or transaction endpoint is used.
+No live portfolio feed, private key, seed phrase, signer, or transaction endpoint is used in this markup preview.
 
 ## Hosting
 
 The Vercel project uses `projects/xirraen` as its root directory. The existing Dropchoice app remains in `projects/dropchoice`.
+
+## Icon attribution
+
+Branded network SVGs in `public/chain-icons` are sourced from [Web3Icons](https://github.com/0xa3k5/web3icons) (`@web3icons/core` v4.0.58), under the MIT license. The USDT/Tether logo is an official PNG media asset from [Tether's Media Assets page](https://tether.to/en/media/); it is included unmodified and displayed proportionally inside the same small square frame as the network icons, following Tether's logo-use guidelines.

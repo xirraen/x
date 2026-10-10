@@ -1,0 +1,3 @@
+The seven branded network SVGs are sourced from Web3Icons (`@web3icons/core` v4.0.58), project: https://github.com/0xa3k5/web3icons, under the MIT license.
+
+The USDT/Tether token logo is an official Tether media asset from https://tether.to/en/media/ (catalog result sourced from Tether). The PNG is included unmodified as `usdt-tether.png`; the UI scales it proportionally with `object-fit: contain` inside the same small square frame as the network icons. Tether's media-asset guidelines require use of supplied logo assets without altering their appearance.

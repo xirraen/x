@@ -1,16 +1,16 @@
 import Image from "next/image";
 import WalletAddressButton from "./components/wallet-address-button";
 
-const walletAddress = "0x229d4c9b9bad660008e1210d3be7182b75c27e28";
+const walletAddress = "0xCcA079160b4D308C5480BB40F066De58761a2e1D";
 
 const networks = [
-  { name: "Ethereum", mark: "ETH", tone: "ethereum" },
-  { name: "Optimism", mark: "OP", tone: "optimism" },
-  { name: "Arbitrum", mark: "ARB", tone: "arbitrum" },
-  { name: "Base", mark: "BASE", tone: "base" },
-  { name: "Gnosis", mark: "GNO", tone: "gnosis" },
-  { name: "Polygon", mark: "POL", tone: "polygon" },
-  { name: "Avalanche C-Chain", mark: "AVAX", tone: "avalanche" },
+  { name: "Ethereum", asset: "ethereum.svg", tone: "ethereum" },
+  { name: "Optimism", asset: "optimism.svg", tone: "optimism" },
+  { name: "Arbitrum", asset: "arbitrum-one.svg", tone: "arbitrum" },
+  { name: "Base", asset: "base.svg", tone: "base" },
+  { name: "Gnosis", asset: "gnosis.svg", tone: "gnosis" },
+  { name: "Polygon", asset: "polygon.svg", tone: "polygon" },
+  { name: "Avalanche C-Chain", asset: "avalanche.svg", tone: "avalanche" },
 ];
 
 const profileLinks = [
@@ -114,21 +114,14 @@ export default function Home() {
           <section className="onchain-card" aria-labelledby="onchain-title">
             <div className="onchain-head">
               <WalletAddressButton address={walletAddress} />
-              <span className="snapshot-pill">7 CHAIN</span>
             </div>
             <h2 className="sr-only" id="onchain-title">Ringkasan on-chain wallet</h2>
 
             <div className="balance-row">
-              <div>
-                <span className="balance-caption">ESTIMASI NILAI · USD</span>
-                <strong className="balance-value">$0.000</strong>
-              </div>
-              <span className="balance-token" aria-hidden="true">◎</span>
-            </div>
-
-            <div className="allocation-wrap" aria-label="Belum ada data alokasi aset atau perubahan 24 jam">
-              <div className="allocation-track"><span /></div>
-              <div className="allocation-label"><span>ALOKASI ASET</span><strong>24J —%</strong></div>
+              <strong className="balance-value">$0.000</strong>
+              <span className="balance-token" role="img" aria-label="USDT Tether" title="USDT Tether">
+                <Image src="/chain-icons/usdt-tether.png" alt="" width={18} height={18} />
+              </span>
             </div>
 
             <dl className="onchain-metrics">
@@ -140,12 +133,11 @@ export default function Home() {
 
             <div className="chain-icons" aria-label="Tujuh jaringan yang diperiksa">
               {networks.map((network) => (
-                <span className={`chain-icon chain-${network.tone}`} title={network.name} aria-label={network.name} key={network.name}>
-                  {network.mark}
+                <span className={`chain-icon chain-${network.tone}`} role="img" title={network.name} aria-label={network.name} key={network.name}>
+                  <Image src={`/chain-icons/${network.asset}`} alt="" width={18} height={18} />
                 </span>
               ))}
             </div>
-            <p className="snapshot-note">Saldo snapshot: 10 Okt 2026, 15:39 WIB. Metrik aktivitas belum diindeks.</p>
           </section>
 
           <nav className="links-folder" aria-label="Folder tautan sosial dan Web3">
