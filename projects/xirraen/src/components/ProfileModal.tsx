@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import type { ChatProfile, ContactPlatform } from "@/lib/global-chat/types";
+import type { ChatProfile } from "@/lib/global-chat/types";
 import { isReservedName } from "@/lib/global-chat/validation";
 
 type ProfileModalProps = {
@@ -14,14 +14,12 @@ type ProfileModalProps = {
 export function ProfileModal({ open, initial, close, save }: ProfileModalProps) {
   const [name, setName] = useState("");
   const [handle, setHandle] = useState("");
-  const [platform, setPlatform] = useState<ContactPlatform>("unknown");
   const [error, setError] = useState("");
 
   useEffect(() => {
     if (!open) return;
     setName(initial?.displayName ?? "");
     setHandle(initial?.contactHandle ?? "");
-    setPlatform(initial?.contactPlatform ?? "unknown");
     setError("");
   }, [open, initial]);
 
@@ -39,27 +37,20 @@ export function ProfileModal({ open, initial, close, save }: ProfileModalProps) 
       guestId: initial?.guestId ?? crypto.randomUUID(),
       displayName: cleanName,
       contactHandle: cleanHandle ? `@${cleanHandle}` : undefined,
-      contactPlatform: platform,
+      contactPlatform: cleanHandle ? "telegram" : "unknown",
     });
   }
 
   return (
     <div className="gc-modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
       <form className="gc-modal" onSubmit={submit} aria-labelledby="gc-modal-title">
-        <h2 id="gc-modal-title">Mulai percakapan</h2>
-        <p className="gc-modal-hint">Buat profil ringan untuk mulai menulis.</p>
-        <label className="gc-field">Nama panggilan *
+        <h2 id="gc-modal-title">Mulai Percakapan</h2>
+        <p className="gc-modal-hint">Buat nama ringan untuk mulai menulis</p>
+        <label className="gc-field">Nama Panggilan
           <input autoFocus value={name} onChange={(event) => setName(event.target.value)} placeholder="Andi / CryptoHunter" maxLength={24} />
         </label>
-        <label className="gc-field">Username Telegram / X (opsional)
+        <label className="gc-field">Telegram Username (opsional)
           <input value={handle} onChange={(event) => setHandle(event.target.value)} placeholder="@andiweb3" maxLength={33} />
-        </label>
-        <label className="gc-field">Platform
-          <select value={platform} onChange={(event) => setPlatform(event.target.value as ContactPlatform)}>
-            <option value="unknown">Tidak disebutkan</option>
-            <option value="telegram">Telegram</option>
-            <option value="x">X / Twitter</option>
-          </select>
         </label>
         <p className="gc-modal-hint">Username bersifat publik. Data profil tersimpan di browser ini.</p>
         {error && <p className="gc-error">{error}</p>}

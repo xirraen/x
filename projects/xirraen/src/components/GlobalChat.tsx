@@ -91,7 +91,6 @@ export function GlobalChat() {
         <span>Global Chat</span>
         <span className="gc-count">{status === "ready" ? messages.length : "—"}</span>
       </header>
-      <div className="gc-banner">Tanya langsung kepada Admin atau diskusikan dengan pengunjung lain.</div>
       <div className="gc-feed" ref={feedRef} role="log" aria-live="polite">
         {status === "loading" && <p className="gc-empty">Menghubungkan chat…</p>}
         {status === "offline" && (
@@ -108,10 +107,10 @@ export function GlobalChat() {
             <div className="gc-message-content">
               <div className="gc-meta">
                 <span>{message.displayName}</span>
+                {message.contactHandle && <span className="gc-handle-inline">{message.contactHandle}</span>}
                 {message.role === "admin" && <b className="gc-badge">ADMIN</b>}
                 <time>{new Date(message.createdAt).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}</time>
               </div>
-              {message.contactHandle && <div className="gc-handle">{message.contactHandle}</div>}
               <p className="gc-text">{message.content}</p>
             </div>
           </article>
@@ -122,8 +121,7 @@ export function GlobalChat() {
           <p className="gc-offline-foot">Pratinjau sementara · database Neon belum dikonfigurasi</p>
         ) : !profile ? (
           <>
-            <button className="gc-primary" onClick={() => setModalOpen(true)}>Buat profil untuk menulis</button>
-            <p className="gc-hint">Nama panggilan saja · tidak perlu login</p>
+            <button className="gc-primary gc-writing-button" onClick={() => setModalOpen(true)}>Buat nama untuk menulis</button>
           </>
         ) : (
           <>
