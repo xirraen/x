@@ -42,25 +42,23 @@ export default function Home() {
         <OnchainDataProvider>
         <div className="bento-grid">
           <section className="profile-card" aria-labelledby="profile-name">
-            <div className="profile-cover" aria-hidden="true">
-              <span className="cover-orbit cover-orbit-one" />
-              <span className="cover-orbit cover-orbit-two" />
-              <span className="cover-glint" />
-            </div>
             <div className="profile-main">
               <Image
                 className="profile-avatar"
-                src="/xirraen-avatar.webp"
-                alt="Avatar abstrak Web3 xirraen"
+                src="/xirraen-x-avatar.jpg"
+                alt="Foto profil X @xirraen"
                 width={86}
                 height={86}
                 priority
               />
               <div className="profile-copy">
-                <h1 id="profile-name">xirraen<span className="period">.</span></h1>
-                <p className="handle">@xirraen <span aria-hidden="true">·</span> exploring web3 ecosystems</p>
-                <p className="bio">Menjelajahi protokol on-chain, budaya aset digital, dan komunitas yang membentuk internet terbuka.</p>
-                <div className="profile-tags" aria-label="Topik profil"><span>WEB3</span><span>ON-CHAIN</span></div>
+                <div className="profile-title-row">
+                  <h1 id="profile-name">XIRRAEN</h1>
+                </div>
+                <p className="profile-tagline">LIVING <span className="tagline-highlight">ON-CHAIN</span></p>
+                <a className="profile-telegram" href="https://t.me/xirraen" target="_blank" rel="noreferrer" aria-label="Telegram xirraen">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 6.7 16.5 18c-.18.8-.66 1-1.33.62l-3.67-2.7-1.77 1.7c-.2.2-.36.36-.74.36l.26-3.73 6.8-6.15c.3-.26-.07-.4-.46-.15L7.2 13.3l-3.62-1.13c-.79-.25-.8-.79.17-1.16l14.16-5.46c.66-.24 1.24.16 1.03 1.15Z" fill="currentColor"/></svg>
+                </a>
               </div>
             </div>
           </section>

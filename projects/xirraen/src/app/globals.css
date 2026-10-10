@@ -81,15 +81,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .cover-orbit-two { width: 290px; height: 105px; top: -16px; left: calc(50% - 145px); opacity: .5; }
 .cover-glint { position: absolute; width: 6px; height: 6px; left: calc(50% + 128px); top: 26px; border-radius: 50%; background: #e6faff; box-shadow: 0 0 15px 5px rgba(188,246,255,.5); }
 .profile-main { position: relative; z-index: 1; display: flex; align-items: center; gap: 12px; min-height: 160px; padding: 29px 13px 12px; }
-.profile-avatar { display: block; flex: 0 0 82px; width: 82px; height: 82px; border: 3px solid #fff; border-radius: 50%; object-fit: cover; background: #17377e; box-shadow: 0 4px 14px rgba(11,27,77,.22); }
+.profile-avatar { display: block; flex: 0 0 82px; width: 82px; height: 82px; border: 3px solid #fff; border-radius: 12px; object-fit: cover; background: #17377e; box-shadow: 0 4px 14px rgba(11,27,77,.22); }
 .profile-copy { min-width: 0; }
-.profile-card h1 { margin: 0; color: var(--ink); font: 700 clamp(23px,6vw,28px)/1 "Space Grotesk", ui-sans-serif, sans-serif; letter-spacing: -.06em; }
+.profile-title-row { display: flex; align-items: center; }
+.profile-card h1 { margin: 0; color: var(--ink); font: 700 19px/1 "Space Grotesk", ui-sans-serif, sans-serif; letter-spacing: -.06em; }
 .period { color: var(--blue); }
-.handle { margin: 5px 0 6px; color: var(--muted); font: 500 9px/1.35 "JetBrains Mono", ui-monospace, monospace; }
-.handle span { color: #8093c4; }
-.bio { max-width: 335px; margin: 0; color: #314572; font-size: 10px; line-height: 1.45; }
-.profile-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
-.profile-tags span { padding: 4px 6px; border-radius: 7px; color: #fff; background: var(--blue); font: 600 7px/1 "JetBrains Mono", ui-monospace, monospace; }
+.profile-telegram { display: flex; width: 16px; height: 16px; align-items: center; justify-content: center; margin-top: 3px; padding: 2px; border: 1px solid #d8e8f5; border-radius: 4px; color: #fff; background: #229ed9; box-shadow: 0 1px 3px rgba(11,27,77,.12); line-height: 0; }
+.profile-telegram svg { display: block; width: 100%; height: 100%; }
+.profile-tagline { margin: 5px 0 0; color: #5c6c95; font: 500 7px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .02em; }
+.tagline-highlight { display: inline-block; padding: 1px 2px; border-radius: 2px; color: #fff; background: var(--blue); }
 
 .onchain-card {
   grid-column: span 2;
@@ -273,7 +273,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 /* Review layout: preserve the original cards and position only the requested boxes. */
 .page-content { width: min(100%, 980px); }
 .bento-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
-.profile-card { grid-column: 1 / -1; grid-row: 1 / 3; }
+.profile-card { grid-column: 1 / -1; grid-row: 1 / 3; min-height: 0; }
+.profile-cover { display: none; }
+.profile-main { min-height: 0; align-items: stretch; padding: 13px; }
+.profile-avatar { align-self: stretch; height: auto; }
 .onchain-card { grid-column: 1 / 3; grid-row: 3 / 5; }
 .top-links-stack { grid-column: 3 / 5; grid-row: 3 / 4; display: block; height: 62px; min-height: 0; gap: 0; }
 .left-project-stack { grid-column: 1 / 3; grid-row: 5 / 8; display: grid; grid-template-rows: repeat(3,62px); gap: 8px; min-width: 0; align-self: start; }
@@ -282,17 +285,18 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .ecosystem-tile { grid-column: 1 / -1; grid-row: 8 / 9; }
 .activity-tile { grid-column: 1 / -1; grid-row: 9 / 10; }
 .projects-section { grid-column: 1 / -1; grid-row: 10 / 11; }
-.bento-grid { grid-template-rows: repeat(4,minmax(77px,auto)) repeat(3,62px) minmax(154px,auto) auto auto; }
+.bento-grid { grid-template-rows: max-content 0 repeat(2,minmax(77px,auto)) repeat(3,62px) minmax(154px,auto) auto auto; }
 @media (min-width: 760px) {
   .page-content { width: min(100%,980px); }
-  .bento-grid { grid-template-columns: repeat(4,minmax(0,1fr)); grid-template-rows: repeat(4,minmax(82px,auto)) repeat(3,62px) minmax(154px,auto) auto auto; }
+  .bento-grid { grid-template-columns: repeat(4,minmax(0,1fr)); grid-template-rows: max-content 0 repeat(2,minmax(82px,auto)) repeat(3,62px) minmax(154px,auto) auto auto; }
   .left-project-stack { grid-template-rows: repeat(3,62px); gap: 9px; }
   .open-layout-panel { height: auto; margin-top: -16px; }
 }
 @media (max-width: 380px) {
-  .bento-grid { grid-template-rows: repeat(4,minmax(72px,auto)) repeat(3,62px) minmax(154px,auto) auto auto; }
+  .bento-grid { grid-template-rows: max-content 0 repeat(2,minmax(72px,auto)) repeat(3,62px) minmax(154px,auto) auto auto; }
   .left-project-stack { grid-template-rows: repeat(3,62px); gap: 7px; }
   .open-layout-panel { height: auto; margin-top: -10px; }
+  .profile-bio-space { height: 23px; }
 }
 
 /* ZIP Global Chat, scoped to gc-* so existing cards are unaffected. */
