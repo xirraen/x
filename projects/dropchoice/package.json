@@ -1,33 +1,27 @@
 {
   "name": "@xirraen/dropchoice",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "lint": "eslint src",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^6.4.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "lucide-react": "^0.468.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "eslint": "^9.17.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.16",
-    "globals": "^15.14.0",
-    "typescript": "~5.6.3",
-    "typescript-eslint": "^8.19.0",
-    "vitest": "^5.0.3",
-    "jsdom": "^25.0.1"
+    "eslint-config-next": "^15.5.0",
+    "typescript": "^5.7.2"
   }
 }
