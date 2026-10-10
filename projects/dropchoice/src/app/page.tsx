@@ -1,4 +1,7 @@
-"use client";\n\nimport { useEffect, useMemo, useState } from "react";\nimport { Activity, ArrowDownRight, ArrowUpRight, Bell, Bookmark, CheckCircle2, ChevronDown, CircleHelp, Compass, ExternalLink, Filter, Flame, LayoutDashboard, Search, ShieldCheck, Sparkles, Wallet, Zap } from "lucide-react";
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { Activity, ArrowDownRight, ArrowUpRight, Bell, Bookmark, CheckCircle2, ChevronDown, CircleHelp, Compass, ExternalLink, Filter, Flame, LayoutDashboard, Search, ShieldCheck, Sparkles, Wallet, Zap } from "lucide-react";
 
 const opportunities = [
   { name: "Monad", category: "Layer 1", chain: "Monad", status: "Potential", score: 92, raised: "$244M", task: "Testnet & ecosystem activity", color: "violet", tags: ["Testnet", "EVM"] },
