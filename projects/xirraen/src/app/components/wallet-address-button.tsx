@@ -41,7 +41,7 @@ export default function WalletAddressButton({ address }: WalletAddressButtonProp
       aria-label={copied ? "Alamat wallet tersalin" : `Ketuk untuk menyalin alamat wallet ${address}`}
       title={copied ? "Tersalin" : "Ketuk untuk menyalin alamat wallet"}
     >
-      <span className="wallet-address-label">NILAI ON-CHAIN</span>
+      <span className="wallet-address-label">TOTAL ON-CHAIN</span>
       <span className="wallet-address-value" title={address}>{shortAddress}</span>
       <span className="copy-icon" aria-hidden="true">
         {copied ? (

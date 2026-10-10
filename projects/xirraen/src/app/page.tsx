@@ -13,11 +13,14 @@ const networks = [
   { name: "Avalanche C-Chain", asset: "avalanche.svg", tone: "avalanche" },
 ];
 
-const profileLinks = [
-  { name: "X", href: "https://x.com/xirraen", kind: "x", tone: "x" },
-  { name: "GitHub", href: "https://github.com/xirraen", kind: "github", tone: "github" },
-  { name: "Telegram", href: "https://t.me/xirraen", kind: "telegram", tone: "telegram" },
-  { name: "Blockscout Explorer", href: `https://eth.blockscout.com/address/${walletAddress}`, kind: "explorer", tone: "explorer" },
+type SocialApp = { name: string; asset: string; color: string; href: string; native?: boolean; darkTile?: boolean };
+
+const socialApps: SocialApp[] = [
+  { name: "Twitter", asset: "x.svg", color: "000000", href: "https://x.com/xirraen" },
+  { name: "Bluesky", asset: "bluesky.svg", color: "1185FE", href: "https://bsky.app/profile/xirraen.bsky.social" },
+  { name: "Farcaster", asset: "farcaster.svg", color: "855DCD", href: "https://farcaster.xyz/dropchoice" },
+  { name: "Hey", asset: "hey.png", color: "FFFFFF", href: "https://hey.xyz/u/xirraen", native: true },
+  { name: "UpScrolled", asset: "upscrolled.svg", color: "FFFFFF", href: "https://upscrolled.com/@xirraen", native: true, darkTile: true },
 ];
 
 const projects = [
@@ -30,14 +33,6 @@ const projects = [
     tone: "blue",
   },
   {
-    eyebrow: "PROYEK · WEB3",
-    title: "Dropchoice",
-    description: "Ruang eksplorasi untuk produk dan ekosistem Web3.",
-    href: "https://github.com/xirraen/x/tree/main/projects/dropchoice",
-    mark: "D",
-    tone: "violet",
-  },
-  {
     eyebrow: "CATATAN · RISET",
     title: "Dokumentasi",
     description: "Catatan teknis dan keputusan yang terbuka.",
@@ -46,38 +41,6 @@ const projects = [
     tone: "sage",
   },
 ];
-
-function GitHubMark() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="folder-svg">
-      <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.71-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.06 1.14a10.6 10.6 0 0 1 5.56 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.12 2.96.72.78 1.14 1.78 1.14 3.01 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.06c0 .3.2.65.76.54A11.1 11.1 0 0 0 12 .9Z" />
-    </svg>
-  );
-}
-
-function TelegramMark() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="folder-svg">
-      <path fill="currentColor" d="M21.5 3.2 18.2 20c-.25 1.19-.91 1.48-1.85.92l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.03.5l.37-5.2 9.48-8.56c.41-.37-.09-.57-.64-.2L5.25 13.2.2 11.62c-1.1-.35-1.12-1.1.23-1.63L20.2 2.36c.91-.33 1.7.22 1.3.84Z" transform="translate(1 0) scale(.92)" />
-    </svg>
-  );
-}
-
-function ExplorerMark() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="folder-svg">
-      <path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.6" />
-    </svg>
-  );
-}
-
-function ProfileLinkMark({ kind }: { kind: string }) {
-  if (kind === "github") return <GitHubMark />;
-  if (kind === "telegram") return <TelegramMark />;
-  if (kind === "explorer") return <ExplorerMark />;
-  return <span className="x-mark" aria-hidden="true">𝕏</span>;
-}
 
 export default function Home() {
   return (
@@ -125,7 +88,7 @@ export default function Home() {
             </div>
 
             <dl className="onchain-metrics">
-              <div><dt>TOTAL TX</dt><dd>—</dd></div>
+              <div><dt>TRANSAKSI</dt><dd>—</dd></div>
               <div><dt>UMUR</dt><dd>—</dd></div>
               <div><dt>GAS</dt><dd>—</dd></div>
               <div><dt>PROTOKOL</dt><dd>—</dd></div>
@@ -140,16 +103,33 @@ export default function Home() {
             </div>
           </section>
 
-          <nav className="links-folder" aria-label="Folder tautan sosial dan Web3">
-            <div className="folder-heading"><span>FOLDER LINKS</span><span>04</span></div>
-            <div className="folder-grid">
-              {profileLinks.map((link) => (
-                <a className={`folder-link folder-${link.tone}`} href={link.href} target="_blank" rel="noreferrer" aria-label={link.name} title={link.name} key={link.name}>
-                  <ProfileLinkMark kind={link.kind} />
-                </a>
-              ))}
+          <div className="top-links-stack">
+            <nav className="links-folder" aria-label="Social media">
+              <div className="social-grid">
+                {socialApps.map((app) => {
+                  const tileStyle = { backgroundColor: app.darkTile ? "#080808" : app.native ? "#fff" : `#${app.color}` };
+                  return (
+                    <a className={`social-tile is-linked${app.native ? " is-native" : ""}${app.darkTile ? " is-dark" : ""}`} href={app.href} target="_blank" rel="noreferrer" aria-label={app.name} title={app.name} style={tileStyle} key={app.name}>
+                      <Image className={`social-brand-icon${app.native ? " is-native" : ""}${app.darkTile ? " is-compact" : ""}`} src={`/social-icons/${app.asset}`} alt="" width={20} height={20} />
+                    </a>
+                  );
+                })}
+              </div>
+            </nav>
+
+            <a className="project-card feature-dropchoice-card" href="https://dropchoice-web.vercel.app" target="_blank" rel="noreferrer" aria-label="Web3 Tracker: Dropchoice Beta">
+              <Image className="dropchoice-logo" src="/dropchoice-logo.svg" alt="" width={30} height={30} />
+              <span className="project-copy">
+                <span className="project-eyebrow">WEB3 TRACKER</span>
+                <strong>DROPCHOICE | BETA</strong>
+              </span>
+              <span className="project-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <div className="coming-soon-card" role="note" aria-label="Coming soon">
+              <span>COMING SOON</span>
             </div>
-          </nav>
+          </div>
 
           <section className="empty-tile ecosystem-tile" aria-labelledby="ecosystem-heading">
             <div className="tile-heading">

@@ -134,24 +134,33 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .onchain-metrics dd { margin: 0; color: #66769f; font: 500 7px/1.2 "JetBrains Mono", ui-monospace, monospace; }
 .chain-icons { display: flex; justify-content: space-between; align-items: center; gap: 2px; margin-top: 4px; padding-top: 3px; }
 
-.links-folder {
+.top-links-stack {
   grid-column: span 2;
   grid-row: span 2;
-  min-height: 180px;
-  padding: 11px;
-  border-radius: 18px;
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  grid-template-rows: repeat(3,minmax(0,1fr));
+  gap: 8px;
 }
-.folder-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; color: #63739b; font: 500 7px/1.2 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .08em; }
-.folder-heading span:last-child { color: #9ba8c1; }
-.folder-grid { display: grid; height: calc(100% - 20px); grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
-.folder-link { display: grid; min-height: 0; place-items: center; border-radius: 14px; color: #fff; box-shadow: 0 3px 8px rgba(11,27,77,.2); transition: transform .16s, filter .16s; }
-.folder-link:hover { transform: translateY(-2px); filter: brightness(1.08); }
-.folder-link.folder-x { background: #050505; }
-.folder-link.folder-github { background: #18233c; }
-.folder-link.folder-telegram { background: #249bd7; }
-.folder-link.folder-explorer { background: #2b5cff; }
-.folder-svg { display: block; width: 21px; height: 21px; }
-.x-mark { font: 600 23px/1 Arial, sans-serif; }
+.links-folder {
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 14px;
+}
+.social-grid { display: grid; flex: 1; min-width: 0; min-height: 0; grid-template-columns: repeat(5,minmax(0,1fr)); grid-template-rows: 1fr; align-items: center; gap: 4px; }
+.social-tile { display: grid; width: min(100%,36px); aspect-ratio: 1; place-items: center; justify-self: center; align-self: center; overflow: hidden; border: 1px solid rgba(255,255,255,.58); border-radius: 9px; color: #fff; box-shadow: 0 2px 6px rgba(11,27,77,.16); transition: transform .16s, filter .16s; }
+.social-tile.is-linked:hover { transform: translateY(-2px); filter: brightness(1.1); }
+.social-tile.is-native { border-color: #e2e8f5; }
+.social-tile.is-dark { border-color: rgba(255,255,255,.32); }
+.social-brand-icon { display: block; width: 17px; height: 17px; object-fit: contain; filter: brightness(0) invert(1); }
+.social-brand-icon.is-native { width: 100%; height: 100%; padding: 3px; filter: none; }
+.social-brand-icon.is-compact { width: 70%; height: 70%; padding: 0; }
 
 .empty-tile { grid-column: 1 / -1; grid-row: span 2; min-height: 154px; padding: 12px; border-radius: 18px; }
 .tile-heading, .projects-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
@@ -174,7 +183,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
 .project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
 .project-card { display: grid; grid-template-columns: 31px minmax(0,1fr) 14px; align-items: center; gap: 8px; min-height: 68px; padding: 9px; border-radius: 13px; transition: transform .16s, box-shadow .16s, border-color .16s; }
 .project-card:hover { transform: translateY(-2px); border-color: #c2d5ff; box-shadow: 0 8px 18px rgba(11,27,77,.19); }
-.project-card:last-child { grid-column: 1 / -1; }
+.project-card.feature-dropchoice-card { width: 100%; height: 100%; min-height: 0; grid-template-columns: 28px minmax(0,1fr) 12px; gap: 6px; padding: 6px; border-color: #cbd9ff; border-radius: 14px; background: #fff; }
+.feature-dropchoice-card .project-copy strong { font-size: 8px; letter-spacing: -.025em; }
+.dropchoice-logo { display: block; width: 26px; height: 26px; border-radius: 8px; }
+.coming-soon-card { display: grid; width: 100%; height: 100%; min-width: 0; min-height: 0; place-items: center; border: 1px solid #d6dae3; border-radius: 14px; color: #8991a1; background: #e7e9ee; box-shadow: 0 2px 8px rgba(11,27,77,.07); font: 600 7px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .12em; }
 .project-mark { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; color: #fff; background: linear-gradient(145deg,#418cf2,#1557c3); font: 700 9px/1 "Space Grotesk", ui-sans-serif, sans-serif; }
 .project-violet .project-mark { background: linear-gradient(145deg,#8877ee,#6252c5); font-size: 14px; }
 .project-sage .project-mark { background: linear-gradient(145deg,#6f9c83,#47765e); font-size: 14px; }
@@ -193,7 +205,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
   .bento-grid { grid-auto-rows: minmax(82px,auto); gap: 9px; }
   .profile-main { gap: 15px; padding-left: 16px; }
   .profile-avatar { flex-basis: 88px; width: 88px; height: 88px; }
-  .onchain-card, .links-folder { min-height: 195px; padding: 13px; }
+  .onchain-card { min-height: 195px; padding: 13px; }
+  .top-links-stack { gap: 9px; }
+  .links-folder { padding: 9px; }
   .wallet-address-button { grid-template-columns: max-content minmax(0,1fr) 23px; }
   .copy-icon { width: 23px; height: 23px; }
   .onchain-metrics div { min-height: 18px; }
@@ -209,13 +223,17 @@ a:focus-visible, button:focus-visible { outline: 3px solid #142f88; outline-offs
   .profile-avatar { flex-basis: 68px; width: 68px; height: 68px; }
   .handle { font-size: 7px; }
   .bio { font-size: 8px; }
-  .onchain-card, .links-folder { min-height: 170px; padding: 9px 8px; }
+  .onchain-card { min-height: 170px; padding: 9px 8px; }
+  .top-links-stack { gap: 7px; }
+  .links-folder { padding: 5px; }
   .wallet-address-button { grid-template-columns: max-content minmax(0,1fr) 17px; gap: 4px; }
   .wallet-address-label { font-size: 6px; }
   .wallet-address-value { max-width: 48px; font-size: 6px; }
   .copy-icon { width: 17px; height: 17px; }
   .onchain-metrics dt, .onchain-metrics dd { font-size: 6px; }
   .chain-icon, .balance-token { width: 17px; height: 17px; padding: 1px; }
+  .social-tile { width: min(100%,26px); }
+  .social-brand-icon { width: 16px; height: 16px; }
   .project-description { font-size: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
