@@ -1,58 +1,44 @@
-# Dropchoice
+# Dropchoice — Web3 Intelligence Workspace
 
-Evidence-first Web3 opportunity intelligence workspace untuk menemukan sinyal, mengevaluasi ketidakpastian, mencatat evidence, melacak riset, dan membandingkan trade-off.
-
-## Status saat ini
-
-Dropchoice v1 adalah **frontend prototype modern** berbasis React + TypeScript dengan data demo dan batasan safety yang eksplisit.
-
-- Dashboard responsive dengan Overview, Opportunities, Action Preview, Events, My Activity, dan Safety & Alerts.
-- Pencarian, filter evaluasi, bookmark research lokal, checklist lokal, demo wallet state, dan toast feedback.
-- Tidak ada live source ingestion, authentication, durable backend, wallet signing, atau transaction execution.
-- Tidak ada seed phrase/private key yang diminta.
-- Label editorial bukan financial forecast, reward guarantee, atau eligibility guarantee.
-- Verifikasi sumber resmi secara mandiri sebelum mengambil tindakan.
+Dropchoice is a research-first workspace for discovering and organizing Web3 ecosystem and airdrop opportunities.
 
 ## Stack
+- Next.js App Router
+- React 19 and TypeScript
+- ESLint 9
+- Vercel
 
-- Vite
-- React 18
-- TypeScript
-- Lucide React
-- Plain CSS dengan responsive layout dan reduced-motion support
-
-## Menjalankan lokal
+## Local development
+Run from `projects/dropchoice`:
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Validasi
+Open http://localhost:3000.
 
+## Verification
 ```bash
 npm run typecheck
 npm run lint
-npm test
 npm run build
+npm run start
 ```
 
-## Deployment Vercel
+## Current implementation status
+The Next.js App Router dashboard is an initial frontend implementation. Opportunity rows and summary statistics are demo data. Search/filter controls, wallet connection, persistence, address scanning, and on-chain activity are not yet connected to live services. No database, production authentication, or blockchain indexer is included.
 
-Pada Vercel, gunakan konfigurasi berikut:
+The supplied v1.00 archive was checked against SHA-256 `e671c51dde7e81e2d9ff144725ab11e3a4293d106c3bd2a4bac49503d48b533a`. It contains a static single-page prototype and supporting documentation. The migration keeps the Next.js application as the build/deployment entry point; refactor the v1 interface into native React components in incremental changes rather than treating demo UI as production integration.
 
-- **Root Directory:** `projects/dropchoice`
-- **Framework Preset:** Vite
-- **Build Command:** `npm run build`
-- **Output Directory:** `dist`
-- **Install Command:** `npm install`
+## Security boundaries
+- Never request or store seed phrases/private keys.
+- Treat an address as a public identifier, not proof of ownership.
+- Wallet authentication, if added, must verify one-time challenges and signatures server-side.
+- Do not label activity as confirmed on-chain without a trustworthy provider/indexer response.
+- Keep secrets server-side; never expose them through `NEXT_PUBLIC_*` variables.
 
-Project ini aman dijalankan sebagai static frontend. Backend dan integrasi blockchain harus ditambahkan sebagai tahap terpisah dengan audit safety, source provenance, rate limit, dan validasi kepemilikan wallet.
-
-## Dokumen produk
-
-- `docs/PRODUCT_SPEC.md`
-- `docs/DOMAIN_MODEL.md`
-- `docs/SAFETY_MODEL.md`
-- `docs/TEST_STRATEGY.md`
-- `ROADMAP.md`
+## Documentation
+- `docs/README-NEXTJS.md` — development, verification, and deployment.
+- `docs/IMPLEMENTATION.md` — v1 design and architecture notes.
+- `docs/WHITEPAPER-SUMMARY.md` — source archive contents and prototype boundaries.
